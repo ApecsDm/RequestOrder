@@ -9,14 +9,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class RequestOrder {
 
+
     private WebDriver driver;
+
 
     @BeforeAll
     static void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/_Git Projects/App_order/driver/win/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();;
     }
 
     @BeforeEach
@@ -30,7 +33,6 @@ public class RequestOrder {
             driver.quit();
         }
     }
-
 
     @Test
     public void shouldSubmitRequest() {
