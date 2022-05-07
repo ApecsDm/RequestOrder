@@ -19,7 +19,7 @@ public class RequestOrder {
 
     @BeforeAll
     static void setUp() {
-        System.setProperty("webdriver.chrome.driver", "D:\\_Git Projects\\RequestOrder\\driver\\linux\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "D:\\_Git Projects\\RequestOrder\\driver\\win\\chromedriver.exe");
     }
 
     @BeforeEach
