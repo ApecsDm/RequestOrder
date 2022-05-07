@@ -14,12 +14,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class RequestOrder {
 
 
-    private WebDriver driver;
+    WebDriver driver;
 
 
     @BeforeAll
     static void setUp() {
-        WebDriverManager.chromedriver().setup();;
+        System.setProperty("webdriver.chrome.driver", "D:\\_Git Projects\\RequestOrder\\driver\\win\\chromedriver.exe");
     }
 
     @BeforeEach
