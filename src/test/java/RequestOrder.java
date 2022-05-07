@@ -29,12 +29,14 @@ public class RequestOrder {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
+        options.addArguments("--window-size=1920x1080");
         driver = new ChromeDriver();
     }
 
     @AfterEach
     public void close () {
-            driver.quit();
+
+        driver.quit();
     }
 
     @Test
