@@ -20,7 +20,7 @@ public class RequestOrder {
 
     @BeforeAll
     static void setupClass() {
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "D:\\_Git Projects\\RequestOrder\\driver\\win\\chromedriver.exe");
     }
 
     @BeforeEach
@@ -42,7 +42,7 @@ public class RequestOrder {
         driver.get("http://localhost:9999");
     }
 
-    
+
     /*
     @Test
     void shouldSubmitRequest() {
