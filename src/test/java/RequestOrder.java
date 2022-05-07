@@ -20,7 +20,7 @@ public class RequestOrder {
 
     @BeforeAll
     static void setupClass() {
-        System.setProperty("webdriver.chrome.driver", "D:\\_Git Projects\\RequestOrder\\driver\\win\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
@@ -29,7 +29,6 @@ public class RequestOrder {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        options.addArguments("--disable-gpu");
         driver = new ChromeDriver();
     }
 
@@ -38,6 +37,12 @@ public class RequestOrder {
             driver.quit();
     }
 
+    @Test
+    void shouldTestSomething() {
+        driver.get("http://localhost:9999");
+    }
+
+    /*
     @Test
     void shouldSubmitRequest() {
         open("http://localhost:9999");
@@ -49,7 +54,7 @@ public class RequestOrder {
         $("[data-test-id = order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
     }
 
-   /* @Test
+    @Test
     void  shouldAppearErrorMessage() {
         open("http://localhost:9999");
         $(".heading_theme_alfa-on-white");
