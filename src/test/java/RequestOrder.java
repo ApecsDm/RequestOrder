@@ -19,7 +19,7 @@ public class RequestOrder {
 
     @BeforeAll
     static void setUp() {
-        System.setProperty("webdriver.chrome.driver", "D:\\_Git Projects\\RequestOrder\\driver\\win\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
@@ -29,9 +29,7 @@ public class RequestOrder {
 
     @AfterEach
     public void close () {
-        if (driver != null) {
             driver.quit();
-        }
     }
 
     @Test
