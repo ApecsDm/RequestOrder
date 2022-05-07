@@ -20,7 +20,7 @@ public class RequestOrder {
 
     @BeforeAll
     static void setupClass() {
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "D:\\_Git Projects\\RequestOrder\\driver\\win\\chromedriver.exe");
     }
 
     @BeforeEach
@@ -29,7 +29,6 @@ public class RequestOrder {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        options.addArguments("--window-size=1420,1080");
         options.addArguments("--disable-gpu");
         driver = new ChromeDriver();
     }
