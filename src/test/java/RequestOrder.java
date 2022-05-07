@@ -29,6 +29,8 @@ public class RequestOrder {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
+        options.addArguments("--window-size=1420,1080");
+        options.addArguments("--disable-gpu");
         driver = new ChromeDriver();
     }
 
